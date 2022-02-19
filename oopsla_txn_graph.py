@@ -209,7 +209,7 @@ class OopslaAtomicHistoryPO:
 
 
 if __name__ == '__main__':
-    for i in range(100):
+    for i in range(500):
         folder_name = "output/"+str(i)+"/result.txt"
         with open(folder_name) as in_file:
             raw_ops = in_file.readlines()
@@ -225,9 +225,9 @@ if __name__ == '__main__':
         for key, ww_x in ww.items():
             causal_hist.vis_includes(ww_x)
         causal_hist.vis_is_trans()
-        file = open('adjmap.txt','w');
-        file.write(str(causal_hist.vis.adj_map));
-        file.close();
+        # file = open('adjmap.txt','w');
+        # file.write(str(causal_hist.vis.adj_map));
+        # file.close();
         if causal_hist.vis.has_cycle():
             print('BP222222 found in: ' + str(i))
             print(causal_hist.vis.find_cycle(0))
